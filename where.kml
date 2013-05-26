@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Albuquerque Recycling Drop-off Sites</name>
+  <description><![CDATA[Recycling drop-off sites in Albuquerque, New Mexico.]]></description>
+  <Style id="style2">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style6">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style7">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style10">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style9">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style11">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style5">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style4">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style1">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style14">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style12">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style13">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style8">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style3">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Smith&#39;s (Taylor Ranch Road)</name>
+    <description><![CDATA[<div dir="ltr"><p>8301 Golf Course NW</p>Albuquerque, NM 87120<br><br>(At Paseo Del Norte)<br></div>]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>-106.689888,35.179394,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Solid Waste Main Office</name>
+    <description><![CDATA[<div dir="ltr"><p>4600 Edith NE</p>Albuquerque, NM 87107<br>(505) 761-8100<br><br>(At Edith and Griego)</div>]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>-106.632065,35.126209,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Smith&#39;s</name>
+    <description><![CDATA[<div dir="ltr"><p>8100 Wyoming NE</p>Albuquerque, NM 87113<br>(505) 857-9783<br><br>(At Paseo Del Norte)</div>]]></description>
+    <styleUrl>#style7</styleUrl>
+    <Point>
+      <coordinates>-106.557098,35.176353,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Smith&#39;s</name>
+    <description><![CDATA[<div dir="ltr"><p>4700 Tramway NE</p>Albuquerque, NM 87111<br>(505) 292-5888</div>]]></description>
+    <styleUrl>#style10</styleUrl>
+    <Point>
+      <coordinates>-106.496300,35.132076,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Eagle Rock Convenience Center</name>
+    <description><![CDATA[<div dir="ltr"><p>6301 Eagle Rock NE</p>Albuquerque, NM 87113<br>(505) 857-8318<br><br><span style="font-weight:bold">Hours<br></span>8 a.m. to 5 p.m. 7 days a week<br></div>]]></description>
+    <styleUrl>#style9</styleUrl>
+    <Point>
+      <coordinates>-106.575272,35.187672,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Manzano Mesa Multigenerational Center</name>
+    <description><![CDATA[<div dir="ltr"><p>501 Elizabeth SE</p>Albuquerque, NM 87123<br>(505) 275-8731<br><br>(Next to the Little League Fields.)</div>]]></description>
+    <styleUrl>#style11</styleUrl>
+    <Point>
+      <coordinates>-106.526283,35.065475,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Taylor Ranch Community Center</name>
+    <description><![CDATA[<div dir="ltr"><p>4900 Kachina NW</p>Albuquerque, NM 87120<br><br>(Taylor Ranch near Montano)</div>]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-106.694366,35.155777,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Bear Canyon</name>
+    <description><![CDATA[<div dir="ltr"><p>4645 Pitt NE</p>Albuquerque, NM 87111<br><br>(Near Eubank &amp; Montgomery)</div>]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>-106.530006,35.133614,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Wal-Mart </name>
+    <description><![CDATA[<div dir="ltr"><p>2701 Carlisle NE</p>Albuquerque, NM 87110<br><br>(Carlisle &amp; Claremont)<br><br>Note: Bins have been moved to the rear of the store.</div>]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-106.604462,35.112755,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>North Valley Senior Center</name>
+    <description><![CDATA[<div dir="ltr"><p>3825 4th NW</p>Albuquerque, NM 87107 <br><br>(No glass accepted.)</div>]]></description>
+    <styleUrl>#style14</styleUrl>
+    <Point>
+      <coordinates>-106.644524,35.121532,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Crowne Plaza Hotel (University &amp; Menaul)</name>
+    <description><![CDATA[<div dir="ltr"><p>1901 University NE</p>Albuquerque, NM 87102<br><br>(At University and Menaul, NW corner of hotel.)</div>]]></description>
+    <styleUrl>#style12</styleUrl>
+    <Point>
+      <coordinates>-106.623909,35.109295,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>West Mesa Community Center</name>
+    <description><![CDATA[<div dir="ltr"><p>5500 Glenrio NW</p>Albuquerque, NM 87105<br><br>(at Coors)<br><br>Recycle bin available only during business hours.<br><span style="font-weight:bold"><span style="font-weight:bold"><br></span>Hours</span><br><ul><li>7 a.m. to 8 p.m. Mondays through Thursdays</li><li>8 a.m. to 1 p.m. on Saturdays</li></ul></div>]]></description>
+    <styleUrl>#style13</styleUrl>
+    <Point>
+      <coordinates>-106.701752,35.096573,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>UNM South</name>
+    <description><![CDATA[<div dir="ltr"><p>1701 University SE</p>Albuquerque, NM 87106<br><br>Sunshine Terrace/University, Southside of UNM Baseball Field. Use the entrance located on the northeast corner of the dirt lot directly under the billboard.</div>]]></description>
+    <styleUrl>#style8</styleUrl>
+    <Point>
+      <coordinates>-106.631691,35.063900,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Macaroni Grille South Parking Lot</name>
+    <description><![CDATA[<div dir="ltr"><p>2100 Louisiana NE</p>Albuquerque, NM 87110<br><br>(Vacant parking lot south of the Macaroni Grille)<br></div>]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>-106.564278,35.101299,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

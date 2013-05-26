@@ -1,0 +1,236 @@
+*{margin:0; padding:0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+img{display:block;}
+
+a{color:#EF4748;text-decoration:none;cursor:pointer;}
+a:visited{color:#EF4748;text-decoration:none;}
+a:hover{color:#005580;text-decoration:none;}
+a:active{color:#005580;text-decoration:none;}
+a img{border: 0;}
+
+h1{font-size:2.5m;font-weight:normal;}
+h2{font-size:2em;font-weight:normal;}
+
+hr{display:block;height:1px;border:0;border-top: 1px solid #ccc;}
+
+ul{list-style-type:none;}
+
+input, select, textarea, button{display:inline-block;font-family:'Ledger', serif;font-size:1em;}
+textarea{resize:none;}
+input {
+	border:1px solid rgb(216,216,216);
+	border-radius:4px;
+	padding:5px;
+}
+input[type="button"] {
+	color:#FFF;
+	background:#2061F7;
+	cursor:pointer;
+} input[type="button"]:hover {
+	background:#1548BF;
+} input[type="button"]:active {
+	background:#102047;
+}
+/*input.hasLabel {
+	border-radius:0 4px 4px 0;
+	width:300px;
+}
+
+span.inputLabel {
+	display:inline-block;
+	padding:5px 10px;
+	border:1px solid rgb(216,216,216);
+	border-radius:4px 0 0 4px;
+	background:rgb(242,242,242);
+	width:100px;
+} span.fauxInput {
+	display:inline-block;
+	padding:5px 10px;
+	border:1px solid rgb(236,236,236);
+	border-radius:0 4px 4px 0;
+	background:rgb(242,242,242);
+	width:300px;
+}*/
+
+body {
+	background-color:rgb(236,227,220);
+	font-family:'Ledger', serif;
+}
+
+.makeLink > span {
+	position:absolute; 
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	z-index:900;
+} .makeLink.darkHover > span:hover {
+	background-color:rgba(0,0,0,0.1);
+}
+
+.clearFix:before,
+.clearFix:after {
+	content:"";
+	display:table;
+} .clearFix:after {
+	clear:both;
+}
+
+.clearBoth {
+	clear:both;
+	width:0;
+	height:0;
+}
+
+.textCenter {
+	text-align:center;
+}
+
+#masterDiv {
+	position:relative;
+	width:70%;
+	margin:25px auto;
+	font-size:1em;
+	background-color:rgb(252,252,252);
+	border-radius:20px;
+	padding:20px;
+	min-width:840px;
+	box-shadow:0 3px 3px rgba(0, 0, 0, 0.4);
+	max-width:1200px;
+}
+
+#enterAddressDiv {
+	margin-bottom:10px;
+} #addressInput {
+	width:300px;
+}
+
+#categoryWrap {
+	position:relative;
+	float:left;
+	width:50%;
+	min-width:400px;
+} #categoryDiv, #typeDiv {
+	position:relative;
+	float:left;
+	width:50%;
+	min-width:200px;
+	padding-right:8px;
+} #categoryDiv > p, #typeDiv > p {
+	margin-bottom:15px;
+}
+#categoryUL > li {
+	padding:5px;
+	cursor:pointer;
+	border-radius:5px;
+} #categoryUL > li:hover {
+	color:#FFF;
+	background:#92E089;
+} #categoryUL > li.active {
+	color:#FFF;
+	background:#239915;
+}
+.typeUL > li {
+	padding:3px;
+	cursor:pointer;
+	border-radius:3px;
+	font-size:0.9em;
+	border-bottom:1px dotted #777;
+} .typeUL > li:hover {
+	color:#FFF;
+	background:#6F72ED;
+} .typeUL > li.active {
+	color:#FFF;
+	background:#2629EB;
+}
+
+#mapWrap {
+	position:relative;
+	float:left;
+	width:50%;
+	min-width:400px;
+} #googleMap {
+	position:relative;
+	width:100%; height:480px;
+	margin:5px;
+} .tooltips {
+	width:250px;
+	font-family:Arial, sans-serif;
+	font-size:small;
+} .tooltips > b:first-child {
+	font-size:medium;
+} .tooltipsDirections {
+	width:250px;
+	font-family:Arial, sans-serif;
+	font-size:small;
+}
+
+#directionsDiv {
+	position:relative;
+	width:100%;
+}
+
+.aButton {
+	background:#758EF0;
+	color:#FFF;
+	border:1px solid #0E39E6;
+} .aButton:hover {
+	cursor:pointer;
+	background:#7986BD;
+} .aButton:active {
+	background:#323C63;
+}
+
+#moreDiv {
+	position:relative;
+	display:none;
+}
+
+#locationsDiv {
+	position:relative;
+	width:100%;
+	overflow-x:scroll;
+	overflow-y:hidden;
+	height:277px;
+} .locationDiv {
+	position:relative;
+	float:left;
+	border-radius:10px;
+	cursor:pointer;
+	font-family:Arial, sans-serif;
+	width:225px;
+	height:100%;
+} .locationDiv.active, .locationDiv.active:hover {
+	background:#ACC5FA;
+} .locationDiv:hover {
+	background:rgb(220,220,200);
+} .locationDiv > .locationInner {
+	position:relative;
+	padding:10px 10px 10px 30px;
+} .locationInner > img {
+	display:inline-block;
+	position:absolute;
+	left:0; top:10px;
+}
+
+#transportsDiv {
+	display:table;
+	position:relative;
+	width:100%;
+} .transportDiv {
+	display:table-cell;
+	position:relative;
+	float:left;
+	width:25%;
+	text-align:center;
+	cursor:pointer;
+	border-radius:10px;
+} .transportDiv.active, .transportDiv.active:hover {
+	background:#ACC5FA;
+} .transportDiv:hover {
+	background:rgb(220,220,200);
+} .transportDiv > img {
+	display:inline-block;
+	width:80%;
+	max-width:115px;
+}

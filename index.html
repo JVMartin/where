@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Jacob Martin">
+<meta name="viewport" content="width=500, initial-scale=1, maximum-scale=1">
+<title>Where To Recycle - Add Locations</title>
+<link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<script src="http://maps.googleapis.com/maps/api/js?libraries=geometry&amp;key=AIzaSyAn8-amxiepm9lj-CcgtQj2mhKrs_kOIIE&amp;sensor=false"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="maps.js"></script>
+</head>
+
+<body>
+<div id="masterDiv">
+	<h1 class="textCenter">Where To Recycle in Albuquerque</h1><hr style="margin-bottom:12px;" />
+	<div id="enterAddressDiv">
+		<span>1.  Enter your address:&nbsp;&nbsp;</span><div style="display:inline-block;"><input type="text" id="addressInput" /><input type="button" id="addressDoneButton" value="Done" /></div>
+	</div>
+	<div class="clearFix">
+		<div id="categoryWrap">
+			<div id="categoryDiv">
+				<p>2.  Category:</p>
+				<ul id="categoryUL">
+					<li>Automotive</li>
+					<li>Computer/Electronics</li>
+					<li>Containers and Paper</li>
+					<li class="active">Common</li>
+					<li>Cosmetic and Health</li>
+					<li>Household Cleaners</li>
+					<li>Lawn and Garden</li>
+					<li>Miscellaneous</li>
+					<li>Paint and Related</li>
+				</ul>
+			</div>
+			<div id="typeDiv">
+				<p>3.  Item:</p>
+				<ul class="typeUL">
+					<li class="active">Aluminum</li>
+					<li>Paper</li>
+					<li>Cardboard</li>
+					<li>Glass</li>
+					<li>Plastic</li>
+				</ul>
+			</div>
+		</div>
+		<div id="mapWrap">
+			<div id="googleMap"></div>
+		</div>
+	</div>
+	<div id="directionsDiv"></div>
+	<div id="moreDiv">
+		<p style="margin-top:12px;">2.  Select a location: </p>
+		<div id="locationsDiv" class="clearFix"></div>
+		<p style="margin-top:12px;">3.  Select a mode of transportation: </p>
+		<div id="transportsDiv" class="clearFix">
+			<div class="transportDiv active" data-type="Car"><img src="images/car.png" alt="Car" /></div>
+			<div class="transportDiv" data-type="Bike"><img src="images/bike.png" alt="Bicycle" /></div>
+			<div class="transportDiv" data-type="Walk"><img src="images/walk.png" alt="Walking" /></div>
+			<div class="transportDiv" data-type="Bus"><img src="images/bus.png" alt="Bus" /></div>
+		</div><br />
+		<div class="textCenter">
+			<input type="button" id="getDirectionsButton" value="Get Directions!" />
+		</div>
+	</div>
+</div>
+</body>
+</html>

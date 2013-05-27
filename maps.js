@@ -48,7 +48,7 @@ function initialize() {
 	directionsService = new google.maps.DirectionsService();
 	
 	//getKMLMarkers();
-	getMarkers('Cell Phone');
+	getMarkers('Aluminum Cans');
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 

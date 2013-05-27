@@ -1,7 +1,7 @@
 var map;
 var geocoder;
 var Albuquerque = new google.maps.LatLng(35.109494,-106.617079);
-var markers = [], stepMarkers = [];
+var kmlMarkers = [], stepMarkers = [], markers = [];
 var descs = [];
 var userMarker;
 var infoWindow = new google.maps.InfoWindow();
@@ -9,16 +9,7 @@ var directionsService;
 var fromAddress, toAddress;
 var transportType = 'Car';
 
-function initialize() {
-	var mapOptions = {
-		center: Albuquerque,
-		zoom:11,
-		mapTypeId:google.maps.MapTypeId.ROADMAP
-	};
-	map=new google.maps.Map(document.getElementById("googleMap"), mapOptions);
-	geocoder = new google.maps.Geocoder();
-	directionsService = new google.maps.DirectionsService();
-	
+function getKMLMarkers() {
 	$.get("where.kml", function(data) {
 		html = "";
 		
@@ -36,20 +27,29 @@ function initialize() {
 				title: name,
 				icon: 'http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-dot.png'
 			});
-			markers.push(marker);
-			var index = markers.indexOf(marker);
-			google.maps.event.addListener(markers[index], 'click', function() {
+			kmlMarkers.push(marker);
+			var index = kmlMarkers.indexOf(marker);
+			google.maps.event.addListener(kmlMarkers[index], 'click', function() {
 				infoWindow.setContent(desc);
-				infoWindow.open(map, markers[index]);
+				infoWindow.open(map, kmlMarkers[index]);
 			});
 		});
 	});
-	/*var ctaLayer = new google.maps.KmlLayer({
-		url: 'http://data.cabq.gov/community/recyclingdrop/recyclingdropoff'
-	});
-	ctaLayer.setMap(map);*/
 }
 
+function initialize() {
+	var mapOptions = {
+		center: Albuquerque,
+		zoom:11,
+		mapTypeId:google.maps.MapTypeId.ROADMAP
+	};
+	map=new google.maps.Map(document.getElementById("googleMap"), mapOptions);
+	geocoder = new google.maps.Geocoder();
+	directionsService = new google.maps.DirectionsService();
+	
+	//getKMLMarkers();
+	getMarkers('Cell Phone');
+}
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function codeAddress() {
@@ -77,8 +77,8 @@ function codeAddress() {
 			var otherLocation;
 			var i, distance, temp;
 			var distanceArray = [];
-			for (i = 0; i < markers.length; i++) {
-				otherLocation = markers[i].getPosition();
+			for (i = 0; i < kmlMarkers.length; i++) {
+				otherLocation = kmlMarkers[i].getPosition();
 				distance = google.maps.geometry.spherical.computeDistanceBetween(userLocation, otherLocation);
 				temp = [distance, i]; 
 				distanceArray.push(temp);
@@ -91,7 +91,7 @@ function codeAddress() {
 			$("#locationsDiv").children().remove();
 
 			var isActive;
-			for (i = 0; i < markers.length; i++) {
+			for (i = 0; i < kmlMarkers.length; i++) {
 				index = distanceArray[i][1];
 				if (i==0) isActive = ' active';
 				else isActive = '';
@@ -100,7 +100,7 @@ function codeAddress() {
 			}
 			toAddress = $(".locationDiv").first().find('p').text() + ' Albuquerque, NM';
 			setTimeout(function() {
-				google.maps.event.trigger(markers[distanceArray[0][1]], "click");
+				google.maps.event.trigger(kmlMarkers[distanceArray[0][1]], "click");
 			}, 1000);
 			
 			$("#moreDiv").slideDown();
@@ -112,7 +112,7 @@ function codeAddress() {
 
 $(document).on('click', '.locationDiv', function() {
 	var index = $(this).data('marker-id');
-	google.maps.event.trigger(markers[index], "click");
+	google.maps.event.trigger(kmlMarkers[index], "click");
 	toAddress = $(this).find('p').text() + ' Albuquerque, NM';
 	$(".locationDiv.active").removeClass('active');
 	$(this).addClass('active');
@@ -179,10 +179,10 @@ $(document).on('click', '#directionsDiv td', function() {
 });
 
 function hideMarkers() {
-	for(var i = 0; i < markers.length; i++) {
-		markers[i].setMap(null);
+	for(var i = 0; i < kmlMarkers.length; i++) {
+		kmlMarkers[i].setMap(null);
 	}
-	markers = [];
+	kmlMarkers = [];
 	
 	userMarker.setMap(null);
 	userMarker = null;
@@ -212,6 +212,40 @@ function attachInstructionText(marker, text) {
 	});
 }
 
+function getMarkers(column) {
+	$.post('get-places.php', {column:column}, function(data) {
+		var it;
+		try {
+			it = JSON.parse(data);
+		} catch(e) {
+			alert(data);
+		}
+		for(var i = 0; i < markers.length; i++) {
+			markers[i].setMap(null);
+		}
+		markers = [];
+		// alert(JSON.stringify(it[0]));
+		$.each(it, function(index, item) {
+			console.log(item.lat+" "+item.lng);
+			var marker = new google.maps.Marker({
+				position: new google.maps.LatLng(item.lat,item.lng),
+				map: map,
+				icon: 'http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-dot.png'
+			});
+			markers.push(marker);
+			var theHTML = '<div class="tooltips">'
+						+'<b>'+item.name+'</b><br />'
+						+'<p>'+item.address1+'</p>'
+						+item.address2+'<br />'
+						+'</div>';
+			var index = markers.indexOf(marker);
+			google.maps.event.addListener(markers[index], 'click', function() {
+				infoWindow.setContent(theHTML);
+				infoWindow.open(map, markers[index]);
+			});
+		});
+	});
+}
 
 $(document).ready(function() {
 	$("#categoryUL > li").click(function() {
@@ -220,7 +254,63 @@ $(document).ready(function() {
 	});
 	
 	$(".typeUL > li").click(function() {
-		$(this).closest('ul').children('.active').removeClass('active');
+		$('.typeUL > li.active').removeClass('active');
 		$(this).addClass('active');
+		getMarkers($(this).html());
+	});
+	
+	$("#automotiveLI").click(function() {
+		$('#categoryUL > li.active').removeClass('active');
+		$(this).addClass('active');
+		$('.typeUL.active').removeClass('active');
+		$('#automotiveUL').addClass('active');
+	});
+	$("#electronicLI").click(function() {
+		$('#categoryUL > li.active').removeClass('active');
+		$(this).addClass('active');
+		$('.typeUL.active').removeClass('active');
+		$('#electronicUL').addClass('active');
+	});
+	$("#paperLI").click(function() {
+		$('#categoryUL > li.active').removeClass('active');
+		$(this).addClass('active');
+		$('.typeUL.active').removeClass('active');
+		$('#paperUL').addClass('active');
+	});
+	$("#commonLI").click(function() {
+		$('#categoryUL > li.active').removeClass('active');
+		$(this).addClass('active');
+		$('.typeUL.active').removeClass('active');
+		$('#commonUL').addClass('active');
+	});
+	$("#healthLI").click(function() {
+		$('#categoryUL > li.active').removeClass('active');
+		$(this).addClass('active');
+		$('.typeUL.active').removeClass('active');
+		$('#healthUL').addClass('active');
+	});
+	$("#constructionLI").click(function() {
+		$('#categoryUL > li.active').removeClass('active');
+		$(this).addClass('active');
+		$('.typeUL.active').removeClass('active');
+		$('#constructionUL').addClass('active');
+	});
+	$("#foodLI").click(function() {
+		$('#categoryUL > li.active').removeClass('active');
+		$(this).addClass('active');
+		$('.typeUL.active').removeClass('active');
+		$('#foodUL').addClass('active');
+	});
+	$("#lawnLI").click(function() {
+		$('#categoryUL > li.active').removeClass('active');
+		$(this).addClass('active');
+		$('.typeUL.active').removeClass('active');
+		$('#lawnUL').addClass('active');
+	});
+	$("#miscLI").click(function() {
+		$('#categoryUL > li.active').removeClass('active');
+		$(this).addClass('active');
+		$('.typeUL.active').removeClass('active');
+		$('#miscUL').addClass('active');
 	});
 });

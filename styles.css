@@ -130,7 +130,11 @@ body {
 	color:#FFF;
 	background:#239915;
 }
-.typeUL > li {
+.typeUL {
+	display:none;
+} .typeUL.active {
+	display:block;
+} .typeUL > li {
 	padding:3px;
 	cursor:pointer;
 	border-radius:3px;

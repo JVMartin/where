@@ -9,12 +9,13 @@ To deploy the app, you must load the `locations` table dump file - `locations.sq
 
 Then, create a constants.php file in the /common/ folder that looks like this:
 
-<?php
+```<?php
 define('DB_HOST', 'your.mysql.domain.or.ip.com');
 define('DB_USER', 'your-db-user');
 define('DB_PASS', 'your-db-pass');
 define('DB_NAME', 'your-db-name-with-the-locations-table-in-it');
 ?>
+```
 
 Then, the app will run.
 
